@@ -3,16 +3,20 @@ package hello.hellospring.service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repositiry.MemberRepository;
 import hello.hellospring.repositiry.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 // 서비스는 비즈니스 의존적으로 설계함.
 
+//@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    //@Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository; // DI(Dependency Injection) : 의존성 주입
     }
