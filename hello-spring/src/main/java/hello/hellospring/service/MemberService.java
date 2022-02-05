@@ -5,6 +5,7 @@ import hello.hellospring.repositiry.MemberRepository;
 import hello.hellospring.repositiry.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +13,7 @@ import java.util.Optional;
 // 서비스는 비즈니스 의존적으로 설계함.
 
 //@Service
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -43,7 +45,7 @@ public class MemberService {
      */
 
     public List<Member> findMembers(){
-        return memberRepository.findALl();
+        return memberRepository.findAll();
     }
 
     public Optional<Member> findOne(Long memberId) {
